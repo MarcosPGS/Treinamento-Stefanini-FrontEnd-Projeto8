@@ -99,16 +99,13 @@ export class CelularFormComponent implements OnInit {
         
         
       }, error => {
-       if (error.ok == false && error.status == 409 ) {
-         let menssagemRecebida:string = error.error.toString();
-         if (menssagemRecebida.substr(0,9) == 'Celular'){
+        if (error.ok == false && error.status == 409 ) {
           Swal({
             type: 'error',
             title: 'Atenção!',
             text: 'Celular Duplicado!',
             
-          })
-         }
+          });
        }
         
        }
