@@ -54,7 +54,7 @@ modalDelete(id: number) {
   Swal({
     title: "<strong>Atenção</strong>",
     type: "warning",
-    html: "<b> Tem certeza que desaja excluiro o registro?",
+    html: "<b> Tem certeza que desaja excluir o registro?",
     showCloseButton: true,
     showCancelButton: true,
     focusConfirm: false,
