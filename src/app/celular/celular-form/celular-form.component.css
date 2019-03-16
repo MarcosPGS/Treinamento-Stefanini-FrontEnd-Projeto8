@@ -1,0 +1,17 @@
+div#botoesFormulario {
+    margin-top: 20px;
+}
+
+.footer {
+    margin-top: 10px;
+    text-align: center;
+}
+.container{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+button.ui-button-danger.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-icon-left {
+    margin-left: 10px;
+}

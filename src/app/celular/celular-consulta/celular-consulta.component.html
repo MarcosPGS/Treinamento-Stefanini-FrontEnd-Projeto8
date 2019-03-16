@@ -1,0 +1,58 @@
+<div class="container">
+
+  <div class="pesquisa" >
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <h1>Celulares</h1>
+      </div>
+      <div class="ui-g-12 ui-fluid">
+        <label>Nome</label>
+        <input type="text" pInputText [(ngModel)]="nome"/>
+      </div>
+      <div class="ui-g-1">
+        <button pButton type="button" icon="pi pi-search" label="Pesquisar"  (click)="searchByName()" pTooltip="Pesquisar" tooltipPosition="top"></button>
+      </div>
+
+      <div class="ui-g-1" id="btADD">
+        <button pButton type="button" icon="pi pi-plus" label="Novo" pTooltip="Criar" tooltipPosition="top" (click)="novo()"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-table #dv [value]="lista" filterBy="nome" [paginator]="true" [rows]="10" paginatorPosition="both" [responsive]="true">
+
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th>#</th>
+            <th>CELULAR</th>
+            <th>QUANTIDADE</th>
+            <th>OPÇÕES</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-linha>
+          <tr>
+            <td class="tdID">{{linha.idCelular}}</td>
+            <td>{{linha.nome}}</td>
+            <td>{{linha.capas.length}}</td>
+            <td id="botoes">
+
+
+              <button pButton type="button" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" id="atualiza" class="btnAtualizacao"
+                (click)="chamarFormulario(linha)"></button>
+
+              <button pButton type="button" icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" id="excluir" class="ui-button-danger"
+                (click)="modalDelete(linha.idCelular)"></button>
+
+
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+    </div>
+
+  </div>
+</div>

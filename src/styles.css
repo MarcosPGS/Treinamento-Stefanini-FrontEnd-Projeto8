@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(37, 37, 42);
+    
+}
+label{
+    font-weight: bold;
+}
+@media(mim-width: 1200px ){
+.container{
+    width: 1170px;
+    margin: 0 30px;    
+    
+}
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    background-color: orange !important;
+}
+
+
+
+div#rodape {
+    margin-top: 40px;
+    text-align: center;
+   
+}
+
+
+
+a {
+    color: white!important;
+    font-weight: bold;
+}
+
+
+.ui-dialog-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-top.ng-tns-c6-0.ng-star-inserted{
+    background-color: blue !important ;
+    color: white;
+}
+.MSG{
+    color: red;
+    margin-left: 10px;
+    font-family: cursive;
+}

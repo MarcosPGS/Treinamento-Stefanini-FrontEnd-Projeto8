@@ -1,0 +1,31 @@
+
+
+<div class="container" >
+        <h1>{{titulo}}</h1>
+        <form [formGroup]="formulario">
+          <label>Nome Celular:</label> 
+          <div class="form-group">
+              <div class="ui-inputgroup">
+                  <span class="ui-g-12 ui-fluid">
+                      <input type="text" pInputText [(ngModel)]="celular.nome" name="nome"  formControlName="nome"/>
+                      
+                  </span>
+              </div>
+          </div>
+        </form>
+        <div id="descricao" class="MSG" *ngIf=" formulario.controls['nome'].invalid && formulario.controls['nome'].dirty">
+                Descrição Inválida, Permitido apenas de 1 a 20 caractere.
+             
+             </div>
+        
+        <div id="appCapa">
+                <app-capa [listaRecebida]="celular.capas" (emissorCapaFilho)="receberCapa($event)" ></app-capa>
+                </div>
+        
+        <div class="footer">
+            <p-footer >
+            <button type="button" pButton icon="pi pi-check" (click)="salvarOuAtualizar()" label="Salvar"  [disabled]="formulario.invalid"></button>
+            <button type="button"  pButton icon="pi pi-close" (click)="voltar()" label="Voltar" class="ui-button-danger"></button>
+            </p-footer>
+        </div>
+</div>

@@ -1,0 +1,22 @@
+div#btADD {
+    margin-left: 70px;
+}
+
+/*----------------------------*\
+          BOTAO
+\*----------------------------*/
+
+button#excluir {
+    margin-left: 5px;
+}
+
+td#botoes {
+    text-align: center;
+}
+
+td.tdID {
+    font-weight: bold;
+}
+
+.pesquisa{
+}

@@ -1,0 +1,67 @@
+<div class="container">
+
+  <div id="btnAddNumero">
+    <p-button label="Adicionar Capa" icon="pi pi-plus"  (click)="novo()"></p-button>
+  </div>
+
+  <p-table [columns]="cols" [value]="capaService.lista">
+    <ng-template pTemplate="header" let-columns>
+       
+        <tr>
+            <th *ngFor="let col of columns" id="header">
+                {{col.header}}
+            </th>
+        </tr>
+        
+        
+    </ng-template>
+    <ng-template pTemplate="body" let-linha>
+        <tr>
+            <td>
+                {{linha.idCapa}}
+            </td>
+            <td>
+                {{linha.descricao}}
+            </td>
+           
+           <td>
+                
+                <button pButton type="button" icon="pi pi-trash" id="excluir" class="ui-button-danger" (click)="modalExcluir(linha)"></button>
+           </td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>
+
+<!--
+  Chamando Dialogo
+-->
+
+
+<p-dialog id="dialogoCadastro" header="Capa" [(visible)]="mostarDialogo" [modal]="true" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}"
+    [minY]="70" [maximizable]="true" [baseZIndex]="1">
+    <form [formGroup]="formulario">
+            <div id="descricao" class="MSG" *ngIf=" mostarDialogo && formulario.controls['descricao'].invalid && formulario.controls['descricao'].dirty">
+                    Nome Inválido, Permitido apenas de 1 a 20 caractere.
+                 
+                 </div>
+         <label for="">Descrição:</label>
+        <div class="form-group">
+            <div class="ui-inputgroup">
+                <span class="ui-float-label">
+                    <input type="text" pInputText formControlName="descricao" [(ngModel)]="capa.descricao" name="descricao" />
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                </span>
+            </div>
+        </div>
+       
+       
+    </form>
+
+
+    <p-footer>
+        <button type="button" pButton icon="pi pi-check" (click)="create()" [disabled]="formulario.invalid"
+            label="Salvar"></button>
+        <button type="button" pButton icon="pi pi-close" (click)="mostarDialogo=false" label="Cancelar" class="ui-button-danger"></button>
+    </p-footer>
+</p-dialog>
