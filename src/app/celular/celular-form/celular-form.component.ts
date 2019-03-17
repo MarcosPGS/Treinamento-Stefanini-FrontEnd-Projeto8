@@ -68,6 +68,14 @@ export class CelularFormComponent implements OnInit {
        this.router.navigate(['/celular']);
        
       }, error => {
+        if (error.ok == false && error.status == 409 ) {
+          Swal({
+            type: 'error',
+            title: 'Atenção!',
+            text: 'Nome de Ceular não pode ser atualizado, Já existi um aparelho com esse nome!',
+            
+          });
+       }
 
       }
     );
