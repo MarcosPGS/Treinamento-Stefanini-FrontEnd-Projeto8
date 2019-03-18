@@ -28,7 +28,8 @@ export class CapaComponent implements OnInit {
     this.capaService.lista = this.listaRecebida;
 
     this.formulario = this.fb.group({     
-      descricao: new FormControl('', Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(20)]))
+      
+      descricao: new FormControl('', Validators.compose([Validators.required, Validators.minLength(0), Validators.maxLength(20)]))
     });
 
     this.cols = [
@@ -79,6 +80,13 @@ export class CapaComponent implements OnInit {
     console.log(this.capaService.lista);
     
     this.emissorCapaFilho.emit(this.capaService.lista);
+    Swal({
+      type: 'success',
+      title: "Excluido!",
+      text: "Registro Excluido Com Sucesso!",
+      showConfirmButton: false,
+      timer: 2500
+    });
   }
 
   

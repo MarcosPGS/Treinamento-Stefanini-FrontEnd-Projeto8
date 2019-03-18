@@ -42,7 +42,7 @@
     [minY]="70" [maximizable]="true" [baseZIndex]="1">
     <form [formGroup]="formulario">
             <div id="descricao" class="MSG" *ngIf=" mostarDialogo && formulario.controls['descricao'].invalid && formulario.controls['descricao'].dirty">
-                    Nome Inválido, Permitido apenas de 1 a 20 caractere.
+                Permitido no máximo de 20 caractere.
                  
                  </div>
          <label for="">Descrição:</label>

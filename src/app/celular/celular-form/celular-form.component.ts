@@ -22,7 +22,7 @@ export class CelularFormComponent implements OnInit {
   ngOnInit() {
 
     this.formulario = this.fb.group({
-     nome : new FormControl('', Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(20)]))
+     nome : new FormControl('', Validators.compose([Validators.required,Validators.minLength(0),  Validators.maxLength(20)]))
     });
     //exemplo de como pega o id:
     const id =  this.activatedRoute.snapshot.paramMap.get('idCelular');
